@@ -34,8 +34,8 @@ startfun: ()->Unit){
             verticalArrangement = Arrangement.Center) {
             Text(text = "Lykkehjul", fontSize = 40.sp)
             if (state.isRunning) {
-                Text(text = state.lives.toString())
-                Text(text = state.playerBalance.toString())
+                Text(text = state.lives.toString() +" Liv")
+                Text(text = state.playerBalance.toString() + " $")
                 val letter = remember {
                     mutableStateOf("")
                 }
@@ -68,7 +68,7 @@ startfun: ()->Unit){
                 Text(text = "£ " + state.BalanceObtained.toString())
             }
             else {
-                Button(onClick = { startfun()}) {
+                Button(onClick = { startfun()}) {Text(text="Start")
 
                 }
             }

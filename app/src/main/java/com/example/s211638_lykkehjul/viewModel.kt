@@ -13,8 +13,8 @@ val WheelResult: String = "hi",
 val wordDisplayed: String = "",
     val spinnable: Boolean = true,
     val lives: Int = 5,
-val playerBalance: Int = 0
-
+val playerBalance: Int = 0,
+    val category: String = ""
 )
 class WheelviewModel() : ViewModel() {
     private val _uiState = mutableStateOf(WheelUiState())
@@ -39,7 +39,11 @@ class WheelviewModel() : ViewModel() {
             2->"2"
             3->"3"
             4->"4"
-            else-> "5"
+            5 -> "5"
+            else-> "0"
+        }
+        if (wheelresult==5){
+            balance=0
         }
 System.out.println("inde i spin")
         _uiState.value = _uiState.value.copy(WheelResult = resulttext, BalanceObtained = wheelresult, spinnable = false )
