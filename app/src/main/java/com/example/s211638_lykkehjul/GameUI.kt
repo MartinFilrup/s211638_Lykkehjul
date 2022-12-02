@@ -56,6 +56,7 @@ startfun: ()->Unit){
                     Button(onClick = { guessfun(letter.value) }, enabled = enabled) {
                         Text("Gæt")
                     }
+                    Text(text = state.category)
                 }
                 Text(state.wordDisplayed, fontSize = 40.sp)
                 var enabled2: Boolean = false

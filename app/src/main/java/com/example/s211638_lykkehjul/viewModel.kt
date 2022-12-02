@@ -60,13 +60,22 @@ System.out.println("inde i spin")
             3->WordList.carBrands.get((0..2).random())
             else-> "hejsa"
         }
+        val category = when(random){
+            1->"Capitals"
+            2->"Drinks"
+            3->"Car Brands"
+            else ->""
+        }
 
 
         val wordDispalyedtemp: StringBuilder = StringBuilder()
         for(i in 1..wordDrawn.length){
             wordDispalyedtemp.append("?")
         }
-        _uiState.value = _uiState.value.copy(wordDisplayed = wordDispalyedtemp.toString(), wordDrawn = wordDrawn, spinnable = true)
+        _uiState.value = _uiState.value.copy(wordDisplayed = wordDispalyedtemp.toString(),
+            wordDrawn = wordDrawn,
+            spinnable = true,
+            category = category)
     }
     var balance = 0
     fun checkLetter(letter: String){
